@@ -1,88 +1,143 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19954427&assignment_repo_type=AssignmentRepo)
-# Testing and Debugging MERN Applications
+# MERN Bug Tracker – Week 6 Testing & Debugging Assignment
 
-This assignment focuses on implementing comprehensive testing strategies for a MERN stack application, including unit testing, integration testing, and end-to-end testing, along with debugging techniques.
+![Bug Tracker Home Screenshot](./screenshots/home-page.png)
 
-## Assignment Overview
+## 🔗 Live Demo
+**Deployed App:** [https://bugtrackerapp-zlc0.onrender.com](https://bugtrackerapp-zlc0.onrender.com)
 
-You will:
-1. Set up testing environments for both client and server
-2. Write unit tests for React components and server functions
-3. Implement integration tests for API endpoints
-4. Create end-to-end tests for critical user flows
-5. Apply debugging techniques for common MERN stack issues
+---
 
-## Project Structure
+## 📌 Overview
 
-```
+This MERN stack application allows users to track bugs through a simple interface. The project includes **unit testing**, **integration testing**, and **end-to-end testing**, along with debugging implementations and strategies.
+
+This project fulfills the Week 6 assignment requirements for testing and debugging a full-stack JavaScript application using industry-standard tools and best practices.
+
+---
+
+## 🧪 Testing Strategy
+
+### ✅ Unit Testing
+
+- **Client-Side (React):**
+  - Tested individual components like `BugItem`, `StatusBadge`, and `PriorityBadge`.
+  - Used **Jest** and **React Testing Library**.
+  - File location: `client/src/tests/unit/`
+
+- **Server-Side (Node/Express):**
+  - Tested utility functions and controller logic in isolation.
+  - File location: `server/tests/unit/`
+
+### ✅ Integration Testing
+
+- **Client-Side Integration:**
+  - Tested flows like rendering a list of bugs via mock API.
+  - File location: `client/src/tests/integration/`
+
+- **Server-Side Integration:**
+  - Used **Supertest** to test Express routes and MongoDB interaction.
+  - Example: Creating, fetching, updating, and deleting bugs.
+  - File location: `server/tests/integration/`
+
+- **Tools Used:**
+  - `supertest`
+  - `mongodb-memory-server` for a clean test DB
+
+### ✅ End-to-End Testing
+
+- Used **Cypress** to simulate user flows like:
+  - Viewing bugs on homepage
+  - Navigating to bug details
+  - Creating and editing a bug
+
+- File location: `client/cypress/e2e/`
+- Commands:
+  ```bash
+  npx cypress open
+
+🧩 Debugging Techniques Applied
+Console tracing and breakpoints in VS Code
+
+Used useEffect and console.log() to verify fetch status and errors
+
+Handled hydration issues with nested <a> tags
+
+Used React DevTools to trace rendering problems
+
+Graceful error boundaries (ErrorBoundary.jsx)
+
+Used network tab in DevTools to inspect API calls
+
+✅ Coverage Report
+Achieved over 70% code coverage for unit tests.
+
+Coverage generated using jest --coverage.
+
+📁 Project Structure Summary
+css
+Copy
+Edit
 mern-testing/
-├── client/                 # React front-end
-│   ├── src/                # React source code
-│   │   ├── components/     # React components
-│   │   ├── tests/          # Client-side tests
-│   │   │   ├── unit/       # Unit tests
-│   │   │   └── integration/ # Integration tests
-│   │   └── App.jsx         # Main application component
-│   └── cypress/            # End-to-end tests
-├── server/                 # Express.js back-end
-│   ├── src/                # Server source code
-│   │   ├── controllers/    # Route controllers
-│   │   ├── models/         # Mongoose models
-│   │   ├── routes/         # API routes
-│   │   └── middleware/     # Custom middleware
-│   └── tests/              # Server-side tests
-│       ├── unit/           # Unit tests
-│       └── integration/    # Integration tests
-├── jest.config.js          # Jest configuration
-└── package.json            # Project dependencies
-```
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── tests/
+│   │   │   ├── unit/
+│   │   │   └── integration/
+│   │   └── App.jsx
+│   └── cypress/
+├── server/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── middleware/
+│   └── tests/
+│       ├── unit/
+│       └── integration/
 
-## Getting Started
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week6-Assignment.md` file
-4. Explore the starter code and existing tests
-5. Complete the tasks outlined in the assignment
+🧪 How to Run Tests
+1. Backend Tests
+bash
+Copy
+Edit
+cd server
+npm install
+npm test
+2. Frontend Tests
+bash
+Copy
+Edit
+cd client
+npm install
+npm test
+3. E2E Tests (Cypress)
+bash
+Copy
+Edit
+cd client
+npx cypress open
+📸 Screenshots
+Home Page (Deployed)	Test Coverage
 
-## Files Included
+✅ Submission Notes
+✔️ Unit tests written and passing
 
-- `Week6-Assignment.md`: Detailed assignment instructions
-- Starter code for a MERN application with basic test setup:
-  - Sample React components with test files
-  - Express routes with test files
-  - Jest and testing library configurations
-  - Example tests for reference
+✔️ Integration tests for API and client flows
 
-## Requirements
+✔️ End-to-end tests with Cypress
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Basic understanding of testing concepts
+✔️ Debugging practices applied
 
-## Testing Tools
+✔️ Deployed at: https://bugtrackerapp-zlc0.onrender.com
 
-- Jest: JavaScript testing framework
-- React Testing Library: Testing utilities for React
-- Supertest: HTTP assertions for API testing
-- Cypress/Playwright: End-to-end testing framework
-- MongoDB Memory Server: In-memory MongoDB for testing
+✔️ Minimum 70% code coverage achieved
 
-## Submission
+✔️ All code and tests pushed to GitHub Classroom repo
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+👨‍💻 Author
+Mohammed Mbarak Hassan
 
-1. Complete all required tests (unit, integration, and end-to-end)
-2. Achieve at least 70% code coverage for unit tests
-3. Document your testing strategy in the README.md
-4. Include screenshots of your test coverage reports
-5. Demonstrate debugging techniques in your code
-
-## Resources
-
-- [Jest Documentation](https://jestjs.io/docs/getting-started)
-- [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
-- [Supertest Documentation](https://github.com/visionmedia/supertest)
-- [Cypress Documentation](https://docs.cypress.io/)
-- [MongoDB Testing Best Practices](https://www.mongodb.com/blog/post/mongodb-testing-best-practices) 
+GitHub: @Mbarak-jr
+Deployed App: Bug Tracker
